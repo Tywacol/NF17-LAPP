@@ -74,7 +74,10 @@ Dirigeant=>Personne)
 | Attribut dérivés            | ![](https://stph.scenari-community.org/bdd/rel2/res/05attd.png) | Pas représenté en MLD (niveau applicatif ou *triggers*) |
 
 ### Associations 
+
 ####Compositions
+
+
 |               Composition                |                                MCD (UML) | $\to$ MLD            |                | ---------------------------------------: | ---------------------------------------: | -------------------- |
 |               Composition                | ![](https://stph.scenari-community.org/bdd/rel2/res/13comp.png) | `Classe1(#a,b)` `Classe2(#c,#a=>Classe1,d)`<br>{local key} est la clé de de la composée |
 | Composition et Attribut Composé Multivalué | ![](https://stph.scenari-community.org/bdd/rel2/res/13compAttmvc.png) | `Classe1(#a)` `RB(#b_b1,#b_b2,#a=>Classe1)` |
