@@ -10,8 +10,8 @@ client.addEventListener('mouseover', () => {
 
 //Direction
 admin.addEventListener('click', () => {
-  window.location = "http://www.google.fr";
+  window.location = "admin/admin.html";
 });
 client.addEventListener('click', () => {
-  window.location = "http://www.google.fr";
+  window.location = "client/client.html";
 });
