@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html
+    ; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <title>Administration de la SCF</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body style="font: 'Roboto'!important">
+    <div class="container text-center">
+      <h1 class="display-3">Bienvenue dans l'espace administrateur !</h1>
+    </div>
+
+    <!-- Navigation intrapage -->
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-gare-tab" data-toggle="tab" href="#nav-gare" role="tab" aria-controls="nav-gare" aria-selected="true">Administrer une gare</a>
+        <a class="nav-item nav-link" id="nav-train-tab" data-toggle="tab" href="#nav-train" role="tab" aria-controls="nav-train" aria-selected="false">Administrer un train</a>
+        <a class="nav-item nav-link" id="nav-t_train-tab" data-toggle="tab" href="#nav-t_train" role="tab" aria-controls="nav-t_train" aria-selected="false">Administrer un type de train</a>
+        <a class="nav-item nav-link" id="nav-arret-tab" data-toggle="tab" href="#nav-arret" role="tab" aria-controls="nav-arret" aria-selected="false">Gérer les arrêts</a>
+        <a class="nav-item nav-link" id="nav-calendrier-tab" data-toggle="tab" href="#nav-calendrier" role="tab" aria-controls="nav-calendrier" aria-selected="false">Programmation des trains</a>
+        <a class="nav-item nav-link" id="nav-lieu-tab" data-toggle="tab" href="#nav-lieu" role="tab" aria-controls="nav-lieu" aria-selected="false">Lieux d'interêts</a>
+        <a class="nav-item nav-link" id="nav-stat-tab" data-toggle="tab" href="#nav-stat" role="tab" aria-controls="nav-stat" aria-selected="false">Statistiques</a>
+      </div>
+    </nav>
+
+    <!-- Navigation interpage, direction vers les .php -->
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-gare" role="tabpanel" aria-labelledby="nav-gare-tab">
+        <div class="container">
+          <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" href="ajout_gare.php" role="tab" aria-selected="true">Ajouter une gare</a>
+            <a class="nav-link" href="../index.html" role="tab" aria-selected="false">Supprimer une gare</a>
+            <a class="nav-link" href="./index.html" role="tab" aria-selected="false">Modifier une gare</a>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-train" role="tabpanel" aria-labelledby="nav-train-tab">
+        <div class="container">
+          <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" href="ajout_train.php" role="tab" aria-selected="true">Ajouter un train</a>
+            <a class="nav-link" href="../index.html" role="tab" aria-selected="false">Supprimer un train</a>
+            <a class="nav-link" href="./index.html" role="tab" aria-selected="false">Modifier un train</a>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-t_train" role="tabpanel" aria-labelledby="nav-t_train-tab">
+        <div class="container">
+          <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" href="ajout_train.php" role="tab" aria-selected="true">Ajouter un type de train</a>
+            <a class="nav-link" href="../index.html" role="tab" aria-selected="false">Supprimer un type de train</a>
+            <a class="nav-link" href="./index.html" role="tab" aria-selected="false">Modifier un type de train</a>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-arret" role="tabpanel" aria-labelledby="nav-arret-tab">
+        <div class="container">
+          <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" href="ajout_train.php" role="tab" aria-selected="true">Ajouter un arrêt</a>
+            <a class="nav-link" href="../index.html" role="tab" aria-selected="false">Supprimer un arrêt</a>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-calendrier" role="tabpanel" aria-labelledby="nav-calendrier-tab">
+        Programmation des trains ici
+      </div>
+      <div class="tab-pane fade" id="nav-lieu" role="tabpanel" aria-labelledby="nav-lieu-tab">
+        <div class="container">
+          <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" href="ajout_train.php" role="tab" aria-selected="true">Ajouter un lieu d'interêt</a>
+            <a class="nav-link" href="../index.html" role="tab" aria-selected="false">Supprimer un lieu d'interêt</a>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-stat" role="tabpanel" aria-labelledby="nav-stat-tab">
+        Statistiques ici
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Jquery, Popper & bootstrap  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

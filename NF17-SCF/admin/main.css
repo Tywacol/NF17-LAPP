@@ -1,0 +1,49 @@
+/******************************************************************************
+//                      CODE ECRIT PAR Hugo Paigneau                          *
+//                                                                            *
+//                 Garder ce header si vous utilisez le code                  *
+//                                                                            *
+//                                UTC 2017                                    *
+******************************************************************************/
+
+body{
+  color: #B1B9C1;
+  font-family: 'Roboto', Helvetica, Arial, serif;
+  font: 'Roboto';
+  font-size: 1rem;
+  width: 100%;
+  background-color: coral;
+}
+
+a {
+  color: #320E15;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #53A4C4;
+}
+
+img {
+  width: 100%;
+}
+
+/*Typographie*/
+p {
+  color: #320E15;
+  text-align: center;
+}
+h1, h2 {
+  font-weight: 400;
+  width: 100%;
+}
+
+
+/*Images*/
+.photos {
+  position: relative;
+  padding: 0em 0em 0em 0em;
+  background: #111111 url(routeb.jpg) no-repeat center;
+  background-size: cover;
+  border-radius:35px;
+}
