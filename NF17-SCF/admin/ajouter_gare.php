@@ -29,6 +29,7 @@
       $result = $connexion->prepare($sql);
       $result->execute();
 
+
       $connexion=null;
      ?>
   </body>
