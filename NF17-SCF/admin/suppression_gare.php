@@ -10,14 +10,15 @@
   </head>
   <body>
     <div class="container text-center">
-      <h1>Vous allez supprimer une gare</h1>
+      <h1 class="display-1">Vous allez supprimer une gare</h1>
     </div>
     <?php
       $user = 'nf17p050';
       $password = 'klfRl2NH';
-      $connexion = new PDO('pgsql:host=tuxa.sme.utc ; dbname=dbnf17p050; port=5432',$user,$password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+      $connexion = new PDO('pgsql:host=tuxa.sme.utc;dbname=dbnf17p050;port=5432',$user,$password);
+      $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       //Requete des gares
-      echo "<form class='container' method='POST' action='ajouter_gare.php'>";
+      echo "<form class='container' method='POST' action='supprimer_gare.php'>";
       echo "<div class='form-group'>";
       $sql = "SELECT gare.nom FROM gare";
       $result = $connexion->prepare($sql);
@@ -30,6 +31,7 @@
         echo "</option>";
       }
       echo "</select>";
+      echo "TEST";
       $connexion=null;
      ?>
         </div>

@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="container text-center">
-      <h1>Vous avez ajouté une gare !</h1>
+      <h1 class="display-1">Vous avez ajouté une gare !</h1>
     </div>
     <?php
       $user = 'nf17p050';
