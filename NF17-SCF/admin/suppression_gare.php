@@ -13,9 +13,7 @@
       <h1 class="display-1">Vous allez supprimer une gare</h1>
     </div>
     <?php
-      $user = 'nf17p050';
-      $password = 'klfRl2NH';
-      $connexion = new PDO('pgsql:host=tuxa.sme.utc;dbname=dbnf17p050;port=5432',$user,$password);
+      $connexion = new PDO('pgsql:host=tuxa.sme.utc ; dbname=dbnf17p050; port=5432','nf17p050','klfRl2NH');
       $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       //Requete des gares
       echo "<form class='container' method='POST' action='supprimer_gare.php'>";
