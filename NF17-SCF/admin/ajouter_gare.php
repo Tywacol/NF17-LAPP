@@ -31,7 +31,5 @@
 
       $connexion=null;
      ?>
-    <div>
-    </div>
   </body>
 </html>
