@@ -36,11 +36,13 @@
       $contr = $connexion->prepare($contrainte);
       $contr->execute();
       while($row=$contr->fetch(PDO::FETCH_ASSOC)){
-        if($nom==$row['nom']&&$ville==$row['ville']){
+        if(strtolower($nom)==strtolower($row['nom'])&&strtolower($ville)==strtolower($row['ville'])){
           echo "<p>Le nom de la gare a déjà été rentré pour cette ville</p>";
           $verif=false;
+          return;
         }
       }
+
 
       //Implémentation dans la BDD
       if($verif){
