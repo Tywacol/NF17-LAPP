@@ -10,30 +10,24 @@
   </head>
   <body>
     <div class="container text-center">
-      <h1 class="display-1">Veuillez choisir la gare à supprimer</h1>
+      <h1 class="display-1">Vous avez supprimé la gare</h1>
     </div>
     <?php
       $user = 'nf17p050';
       $password = 'klfRl2NH';
       $connexion = new PDO('pgsql:host=tuxa.sme.utc ; dbname=dbnf17p050; port=5432',$user,$password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-      //Requete des gares
-      echo "<form class='container' method='POST' action='supprimer_gare.php'>";
-      echo "<div class='form-group'>";
-      $sql = "SELECT gare.id_gare, gare.nom, gare.ville FROM gare";
+
+      //Déclaration des variables
+      $gare = $_POST['Selection_Gare'];
+
+      //Suppression dans la BDD
+      $sql = "DELETE FROM gare WHERE gare.id_gare='$gare'";
       $result = $connexion->prepare($sql);
       $result->execute();
-      echo "<label for='Selection_Gare'>Nom de la gare</label>";
-      echo "<select class='form-control' id='Selection_Gare' name='Selection_Gare'>";
-      while ($row=$result->fetch(PDO::FETCH_ASSOC)){
-        echo "<option  value=".$row['id_gare'].">";
-        echo $row['nom']." - ".$row['ville'];
-        echo "</option>";
-      }
-      echo "</select>";
+
+      echo "<a href='suppression_gare.php' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Supprimer une autre gare</button></a>";
+      echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
       $connexion=null;
      ?>
-        </div>
-        <button type="submit" class="btn btn-primary">Supprimer la gare</button>
-      </form>
   </body>
 </html>
