@@ -44,7 +44,7 @@
 
       //Implémentation dans la BDD
       if($verif){
-        $sql = "INSERT INTO gare(nom,ville,adresse,zone_horaire) VALUES (NULL,'$nom','$ville','$adresse','$TZ')";
+        $sql = "INSERT INTO gare(nom,ville,adresse,zone_horaire) VALUES ('$nom','$ville','$adresse','$TZ')";
         $result = $connexion->prepare($sql);
         $result->execute();
       }
