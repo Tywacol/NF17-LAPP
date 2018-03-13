@@ -25,7 +25,7 @@
       $TZ = $_POST["TimeZone_Gare"];
 
       //Implémentation dans la BDD
-      $sql = "INSERT INTO gare VALUES ('$nom','$ville','$adresse','$TZ')";
+      $sql = "INSERT INTO gare VALUES (NULL,'$nom','$ville','$adresse','$TZ')";
       $result = $connexion->prepare($sql);
       $result->execute();
 
