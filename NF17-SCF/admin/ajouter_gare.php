@@ -19,16 +19,35 @@
       //Pas besoin de rentrer l'id de la gare ( auto increment );
 
       //Déclaration des variables
+      $verif=true;
       $nom = $_POST["Nom_Gare"];
       $ville = $_POST["Ville_Gare"];
       $adresse = $_POST["Adresse_Gare"];
       $TZ = $_POST["TimeZone_Gare"];
 
-      //Implémentation dans la BDD
-      $sql = "INSERT INTO gare VALUES (NULL,'$nom','$ville','$adresse','$TZ')";
-      $result = $connexion->prepare($sql);
-      $result->execute();
+      //Si un champs est vide
+      if(empty($nom)||empty($ville)||empty($adresse)){
+        echo "<p>Vous avez oublié de remplir un champs</p>";
+        $verif=false;
+        echo '<a href="ajout_gare.html"><input type="button" value="Modifier" class="button"></a>';
+      }
+      //Si la gare rentrée d'une ville a le même nom qu'un autre gare de cette même ville
+      $contrainte = "SELECT * FROM gare";
+      $contr = $connexion->prepare($contrainte);
+      $contr->execute();
+      while($row=$contr->fetch(PDO::FETCH_ASSOC)){
+        if($nom==$row['nom']&&$ville==$row['ville']){
+          echo "<p>Le nom de la gare a déjà été rentré pour cette ville</p>";
+          $verif=false;
+        }
+      }
 
+      //Implémentation dans la BDD
+      if($verif){
+        $sql = "INSERT INTO gare(nom,ville,adresse,zone_horaire) VALUES (NULL,'$nom','$ville','$adresse','$TZ')";
+        $result = $connexion->prepare($sql);
+        $result->execute();
+      }
 
       $connexion=null;
      ?>
