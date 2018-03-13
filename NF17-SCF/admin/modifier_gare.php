@@ -23,11 +23,29 @@
       $sql = "SELECT gare.nom, gare.ville, gare.adresse, gare.zone_horaire FROM gare WHERE gare.id_gare=$gare";
       $result = $connexion->prepare($sql);
       $result->execute();
-      echo "<form class='container' method='POST' action='ajouter_gare.php'>";
+
+      //Création du tableau pour récupérer les infos
+      $row = $result->fetch(PDO::FETCH_ASSOC);
+
+      //nom de la gare
+      echo "<form class='container' method='POST' action='valider_gare.php'>";
       echo  "<div class='form-group'>";
       echo "<label for='Nom_Gare'>Nom de la gare</label>";
-      echo "<input type='text' class='form-control' id='Nom_Gare' name='Nom_Gare' value=''>";
+      echo "<input type='text' class='form-control' id='Nom_Gare' name='Nom_Gare' value='".$row['nom']."'>";
       echo "</div>";
+      //ville gare
+      echo  "<div class='form-group'>";
+      echo "<label for='Ville_Gare'>Ville de la gare</label>";
+      echo "<input type='text' class='form-control' id='Ville_Gare' name='Ville_Gare' value='".$row['ville']."'>";
+      echo "</div>";
+      //adresse gare
+      echo  "<div class='form-group'>";
+      echo "<label for='Adresse_Gare'>Adresse de la gare</label>";
+      echo "<input type='text' class='form-control' id='Adresse_Gare' name='Adresse_Gare' value='".$row['adresse']."'>";
+      echo "</div>";
+      //timezone plus tard RIP
+
+      echo "<button type='submit' class='btn btn-warning'>Valider la modification</button>";
 
       echo "</form>";
       $connexion=null;
