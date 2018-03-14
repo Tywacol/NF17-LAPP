@@ -45,6 +45,11 @@
       echo "</div>";
       //timezone plus tard RIP
 
+
+      echo "<input type='hidden' class='form-control' id='Nom_Base' name='Nom_Base' value='".$row['nom']."'>";
+      echo "<input type='hidden' class='form-control' id='Ville_Base' name='Ville_Base' value='".$row['ville']."'>";
+      echo "<input type='hidden' class='form-control' id='Nom_Base' name='Id_Base' value='$gare'>";
+
       echo "<button type='submit' class='btn btn-warning'>Valider la modification</button>";
 
       echo "</form>";
