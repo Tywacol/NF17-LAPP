@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="container text-center">
-      <h1 class="display-1">Veuillez selectionner la gare à modifier</h1>
+      <h1 class="display-1 test">Veuillez selectionner la gare à modifier</h1>
     </div>
     <?php
       $user = 'nf17p050';
@@ -32,7 +32,7 @@
       echo "</select>";
       $connexion=null;
      ?>
-        </div>
+    </div>
         <button type="submit" class="btn btn-primary">Modifier la gare</button>
       </form>
   </body>
