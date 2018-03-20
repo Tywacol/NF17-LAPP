@@ -10,9 +10,7 @@
   </head>
   <body>
     <?php
-      $user = 'nf17p050';
-      $password = 'klfRl2NH';
-      $connexion = new PDO('pgsql:host=tuxa.sme.utc ; dbname=dbnf17p050; port=5432',$user,$password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+      include_once '../lib/dbconnect.php';
       //Pas besoin de rentrer l'id de la gare ( auto increment );
 
       //Déclaration des variables
@@ -28,7 +26,7 @@
         echo "<h1 class='display-1'>Erreur !</h1>";
         echo "</div>";
         echo "<div class='alert alert-danger container' role='alert'>";
-        echo "<p class='mx-auto px-auto'>Vous avez oublié de remplir un champs</p>";
+        echo "<p class='mx-auto px-auto'>Vous avez oublié de remplir un champ</p>";
         echo "</div>";
         $verif=false;
         echo "<a href='ajout_gare.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau la gare</button></a>";
@@ -54,7 +52,7 @@
       }
 
 
-      //Implémentation dans la BDD
+      //Insertion dans la BDD
       if($verif){
         $sql = "INSERT INTO gare(nom,ville,adresse,zone_horaire) VALUES ('$nom','$ville','$adresse','$TZ')";
         $result = $connexion->prepare($sql);
