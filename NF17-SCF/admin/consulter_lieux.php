@@ -40,7 +40,8 @@
                   <td>".$row['type_lieu']."</td>
                   <td>".$row['nom']."</td>
                   <td>
-                    <a href='supprimer_lieu.php?nom="+$row['nom']+"&adresse"+$row['adresse']+" class='btn btn-sm btn-danger'>Supprimer</a>
+                  <a class='btn btn-warning'>Modifier</a>
+                  <a class='btn btn-danger'>Supprimer</a>
                   </td>
                </tr>";
         }
