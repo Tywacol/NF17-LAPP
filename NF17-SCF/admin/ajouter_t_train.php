@@ -22,6 +22,25 @@
       $vitesse = $_POST['Vitesse'];
       $verif = true;
 
+      if(empty($nom)||empty($nbp)||empty($vitesse)){
+        echo "<div class='container text-center'>";
+        echo "<h1 class='display-1'>Erreur !</h1>";
+        echo "</div>";
+        echo "<div class='alert alert-danger container' role='alert'>";
+        echo "<p class='mx-auto px-auto'>Vous avez oublié de remplir un champs</p>";
+        echo "</div>";
+        $verif=false;
+      }
+
+      if($nbp<$nbp1){
+        echo "<div class='container text-center'>";
+        echo "<h1 class='display-1'>Erreur !</h1>";
+        echo "</div>";
+        echo "<div class='alert alert-danger container' role='alert'>";
+        echo "<p class='mx-auto px-auto'>Impossible d'avoir plus de places en première que le nombre total de places !</p>";
+        echo "</div>";
+        $verif=false;
+      }
 
       if($verif){
         $sql = "INSERT INTO type_train(nom,nb_places,premiere_classe,vitesse) VALUES ('$nom',$nbp,$nbp1,$vitesse)";
