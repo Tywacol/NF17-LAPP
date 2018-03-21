@@ -22,6 +22,7 @@
       $vitesse = $_POST['Vitesse'];
       $verif = true;
 
+      //Validité
       if(empty($nom)||empty($nbp)||empty($vitesse)){
         echo "<div class='container text-center'>";
         echo "<h1 class='display-1'>Erreur !</h1>";
@@ -30,9 +31,11 @@
         echo "<p class='mx-auto px-auto'>Vous avez oublié de remplir un champs</p>";
         echo "</div>";
         $verif=false;
+        echo "<a href='ajout_t_train.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau un type</button></a>";
+        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
       }
 
-      if($nbp<$nbp1){
+      if($nbp<$nbp1&&$verif){
         echo "<div class='container text-center'>";
         echo "<h1 class='display-1'>Erreur !</h1>";
         echo "</div>";
@@ -40,6 +43,27 @@
         echo "<p class='mx-auto px-auto'>Impossible d'avoir plus de places en première que le nombre total de places !</p>";
         echo "</div>";
         $verif=false;
+        echo "<a href='ajout_t_train.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau un type</button></a>";
+        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+      }
+      if($verif){
+        $contrainte = "SELECT * FROM type_train";
+        $contr = $connexion->prepare($contrainte);
+        $contr->execute();
+        while($row=$contr->fetch(PDO::FETCH_ASSOC)){
+          if(strtolower($nom)==strtolower($row['nom'])){
+            echo "<div class='container text-center'>";
+            echo "<h1 class='display-1'>Erreur !</h1>";
+            echo "</div>";
+            echo "<div class='alert alert-danger container' role='alert'>";
+            echo "<p>Le type de train a déjà été rentré !</p>";
+            echo "</div>";
+            $verif=false;
+            echo "<a href='ajout_t_train.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau un type</button></a>";
+            echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+            return;
+          }
+        }
       }
 
       if($verif){
