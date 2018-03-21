@@ -28,7 +28,7 @@
               <a href='ajout_lieu.php' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau le lieu</button></a>
               <a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
       }else {
-        $sql = "INSERT INTO `lieu_interet`(`nom_lt`, `adresse_lt`, `telephone_lt`, `type_lieu`, `fk_gare`) VALUES ('$nom', '$adresse', '$telephone', '$type', $gare)";
+        $sql = "INSERT INTO lieu_interet(nom_lt,adresse_lt,telephone_lt,type_lieu,fk_gare) VALUES ('$nom', '$adresse', '$telephone', '$type', $gare)";
         $result = $connexion->prepare($sql);
         $result->execute();
         echo "<div class='container text-center'>
