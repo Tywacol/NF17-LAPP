@@ -13,9 +13,7 @@
       <h1 class="display-1">Veuillez choisir la gare à supprimer</h1>
     </div>
     <?php
-      $user = 'nf17p050';
-      $password = 'klfRl2NH';
-      $connexion = new PDO('pgsql:host=tuxa.sme.utc ; dbname=dbnf17p050; port=5432',$user,$password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+      include_once '../lib/dbconnect.php';
       //Requete des gares
       echo "<form class='container' method='POST' action='supprimer_gare.php'>";
       echo "<div class='form-group'>";
