@@ -3,7 +3,6 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Société De Chemins de Fer Admin</title>
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
@@ -16,7 +15,7 @@
         <select class='form-control' id='Selection_Gare' name='Selection_Gare'>
           <option value="0">Aucune</option>
           <?php
-            include_once '../lib/dbconnect.php';
+            include_once '../../lib/dbconnect.php';
             //Requete des gares
             $sql = "SELECT gare.id_gare, gare.nom, gare.ville FROM gare";
             $result = $connexion->prepare($sql);

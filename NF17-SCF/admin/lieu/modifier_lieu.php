@@ -3,7 +3,6 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Société De Chemins de Fer Admin</title>
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
@@ -11,7 +10,7 @@
       <h1 class="display-1">Modification du lieu</h1>
     </div>
     <?php
-      include_once '../lib/dbconnect.php';
+      include_once '../../lib/dbconnect.php';
 
       //Déclaration des variables
       $nom = $_GET['nom'];
@@ -65,7 +64,8 @@
               </div>
               <input type='hidden' name='nom_base' value='".$nom."'>
               <input type='hidden' name='adresse_base' value='".$adresse."'>
-              <button type='submit' class='btn btn-warning'>Valider la modification</button>
+              <button type='submit' class='btn btn-success'>Valider la modification</button>
+              <a href='consulter_lieux.php' class='btn btn-secondary'>Retour à la gestion des lieux</a>
 
             </form>";
       $connexion=null;

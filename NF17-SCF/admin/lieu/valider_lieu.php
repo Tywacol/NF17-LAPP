@@ -3,13 +3,12 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Société De Chemins de Fer Admin</title>
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
 
     <?php
-    include_once '../lib/dbconnect.php';
+    include_once '../../lib/dbconnect.php';
 
     //Déclaration des variables
     $nom = $_POST["nom"];
@@ -30,7 +29,7 @@
             <div class='alert alert-danger container' role='alert'>
               <p class='mx-auto px-auto'>Vous avez oublié de remplir un champ</p>
             </div>
-            <a href='admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
+            <a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
             <a href='consulter_lieux.php' class='btn btn-secondary btn-lg btn-block'>Revenir a la gestion des lieux</a>";
     }else {
 
@@ -44,7 +43,7 @@
             <div class='alert alert-success container' role='alert'>
               <p>Vous avez bien modifié le lieu!</p>
             </div>
-            <a href='admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
+            <a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
             <a href='consulter_lieux.php' class='btn btn-secondary btn-lg btn-block'>Gérer les lieux</a>";
 
     }

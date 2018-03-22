@@ -31,7 +31,7 @@
       <tbody>
 
         <?php
-        include_once '../lib/dbconnect.php';
+        include_once '../../lib/dbconnect.php';
 
         $sql = "SELECT * FROM lieu_interet, gare WHERE gare.id_gare = lieu_interet.fk_gare ORDER BY fk_gare";
         $result = $connexion->prepare($sql);
@@ -54,8 +54,8 @@
 
       </tbody>
     </table>
-    <a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>
-    <script src="..\lib\jquery-3.3.1.min.js"></script>
-    <script src="script.js"></script>
+    <a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script src="lieu.js"></script>
   </body>
 </html>
