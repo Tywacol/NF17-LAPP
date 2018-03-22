@@ -10,7 +10,7 @@
   </head>
     <body>
       <div class="container text-center">
-        <h1 class="display-1">Vous avez modifé la gare !</h1>
+        <h1 class="display-1">Vous avez modifié la gare !</h1>
       </div>
       <?php
       include_once '../lib/dbconnect.php';
