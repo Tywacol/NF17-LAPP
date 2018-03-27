@@ -36,8 +36,8 @@
         <div class="form-group">
           <label for="Type_Lieu">Type du lieu</label>
           <select class="form-control" name="Type_Lieu">
-            <option>Hotel</option>
-            <option>Taxi</option>
+            <option>Logement</option>
+            <option>Transport</option>
           </select>
         </div>
         <div class="form-group">

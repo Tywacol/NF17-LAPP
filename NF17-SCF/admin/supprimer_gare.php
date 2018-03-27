@@ -13,7 +13,7 @@
       <h1 class="display-1">Vous avez supprimé la gare</h1>
     </div>
     <?php
-    
+
       include_once '../lib/dbconnect.php';
 
       //Déclaration des variables
