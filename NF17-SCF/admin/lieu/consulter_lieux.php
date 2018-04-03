@@ -14,7 +14,7 @@
         <h3 class="float-left">Liste de lieux d'intérêt</h3>
       <!-- </div>
       <div class='col-5'> -->
-        <a href='ajout_lieu.php' class='btn btn-success float-right'>Ajouter un lieu d'intérêt</a>
+        <!-- <a href='ajout_lieu.php' class='btn btn-success float-right'>Ajouter un lieu d'intérêt</a> -->
       <!-- </div>
     </div> -->
     <table class="table table-striped">
